@@ -1,4 +1,2 @@
-bebcon2013-demo
+bedcon2013-demo
 ===============
-
-bebcon2013-demo
