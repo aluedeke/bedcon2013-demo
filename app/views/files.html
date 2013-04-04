@@ -1,0 +1,21 @@
+<breadcrumb path="currentPath" onclick="clickBreadcrumb">
+    <a href="#" data-ng-click="openDirectory({path: '/'})"><i class="icon-home"></i></a>
+</breadcrumb>
+<table class="files table">
+    <thead>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>title</th>
+            <th>last modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="file in files | orderBy: ['-isDirectory', 'name']">
+            <td><input type="checkbox"></td>
+            <td data-ng-switch="file.isDirectory">
+                <span data-ng-switch-when="true"><a href="#" data-ng-click="openDirectory(file)"><i class="icon-folder-close"></i> {{file.name}}</a> </span>
+                <span data-ng-switch-when="false"><a href="#" data-ng-click="openFile(file)"> <i class="icon-file"></i> {{file.name}}</a> </span></td>
+            <td>{{file.modified | date: 'yyyy-MM-dd hh:mm'}}</td>
+        </tr>
+    </tbody>
+</table>

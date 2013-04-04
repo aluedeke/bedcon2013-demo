@@ -1,10 +1,14 @@
 'use strict';
 
-angular.module('bedcon2013DemoApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+angular.module('bedconDemo2App')
+    .controller('MainCtrl', function ($scope, $location, dropbox) {
+        if($location.search()['dboauth_token'] && $location.search()['oauth_token']){
+            $location.path('/files');
+        }
+
+        $scope.connectDropbox = function () {
+            dropbox.authenticate(function () {
+                $location.path('/files');
+            });
+        };
+    });

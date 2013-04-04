@@ -1,0 +1,21 @@
+.files th.small, .files td.small {
+  white-space: nowrap;
+}
+
+.files th{
+  text-transform: uppercase;
+}
+
+.files th:first-child, files td:first-child {
+  width: 20px;
+}
+
+.files th:last-child, files td:last-child {
+  width: 120px;
+}
+
+.files th:first-child input[type='checkbox'], .files td:first-child input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  margin: 3px;
+}
